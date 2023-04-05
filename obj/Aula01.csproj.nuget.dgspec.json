@@ -1,30 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vitor Lima\\Projetos\\FloripaMaisTech\\Semana10\\Aula01\\Aula01.csproj": {}
+    "C:\\Users\\vitor.lima\\Projetos\\FloripaTechMais\\ESTREITO_Semana10_Aula01\\Aula01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vitor Lima\\Projetos\\FloripaMaisTech\\Semana10\\Aula01\\Aula01.csproj": {
+    "C:\\Users\\vitor.lima\\Projetos\\FloripaTechMais\\ESTREITO_Semana10_Aula01\\Aula01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitor Lima\\Projetos\\FloripaMaisTech\\Semana10\\Aula01\\Aula01.csproj",
+        "projectUniqueName": "C:\\Users\\vitor.lima\\Projetos\\FloripaTechMais\\ESTREITO_Semana10_Aula01\\Aula01.csproj",
         "projectName": "Aula01",
-        "projectPath": "C:\\Users\\Vitor Lima\\Projetos\\FloripaMaisTech\\Semana10\\Aula01\\Aula01.csproj",
-        "packagesPath": "C:\\Users\\Vitor Lima\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitor Lima\\Projetos\\FloripaMaisTech\\Semana10\\Aula01\\obj\\",
+        "projectPath": "C:\\Users\\vitor.lima\\Projetos\\FloripaTechMais\\ESTREITO_Semana10_Aula01\\Aula01.csproj",
+        "packagesPath": "C:\\Users\\vitor.lima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vitor.lima\\Projetos\\FloripaTechMais\\ESTREITO_Semana10_Aula01\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Vitor Lima\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\vitor.lima\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://artifactory.softplan.com.br/artifactory/api/nuget/v3/nuget-local": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +70,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -86,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

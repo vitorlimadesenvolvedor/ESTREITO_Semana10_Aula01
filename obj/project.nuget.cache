@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QVjqhX+FRivPWb8wEW/SqzQyP37Xdh83p9LTQRfvX3EOeySI1YWGG8Ut9HBZThlaIEx7IzXY7Sqz5x9i8Q5nwQ==",
+  "dgSpecHash": "8cpNCvnL6moEnEeX7XNjKTtCU+AgZza8JJtfGtEW0brdqn8tyYj96t8hxH/GqzZw1EVus9c1Omg58n/EHlGcgw==",
   "success": true,
   "projectFilePath": "C:\\Users\\vitor.lima\\Projetos\\FloripaTechMais\\ESTREITO_Semana10_Aula01\\Aula01.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitor.lima\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\vitor.lima\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\vitor.lima\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\vitor.lima\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\vitor.lima\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\vitor.lima\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

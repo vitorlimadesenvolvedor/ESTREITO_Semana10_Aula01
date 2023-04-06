@@ -84,9 +84,9 @@ public class MovieController : ControllerBase
 
 }
 
+
 public class FilmeCriacaoDto
 {
-
 
     public string Titulo { get; set; }
     public string Genero { get; set; }

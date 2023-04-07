@@ -163,3 +163,5 @@ C:\Users\vitor.lima\Projetos\FloripaTechMais\ESTREITO_Semana10_Aula01\obj\Debug\
 C:\Users\vitor.lima\Projetos\FloripaTechMais\ESTREITO_Semana10_Aula01\obj\Debug\net6.0\Aula01.genruntimeconfig.cache
 C:\Users\vitor.lima\Projetos\FloripaTechMais\ESTREITO_Semana10_Aula01\obj\Debug\net6.0\ref\Aula01.dll
 C:\Users\vitor.lima\Projetos\FloripaTechMais\ESTREITO_Semana10_Aula01\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\vitor.lima\Projetos\FloripaTechMais\ESTREITO_Semana10_Aula01\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\vitor.lima\Projetos\FloripaTechMais\ESTREITO_Semana10_Aula01\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

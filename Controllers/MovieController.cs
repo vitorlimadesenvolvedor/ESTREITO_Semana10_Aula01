@@ -1,5 +1,8 @@
 using Aula01.Context;
 using Aula01.Models;
+using Aula01.Repositories.Interfaces;
+using Aula01.Validators;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aula01.Controllers;
@@ -8,17 +11,19 @@ namespace Aula01.Controllers;
 [Route("[controller]")]
 public class MovieController : ControllerBase
 {
-    private readonly MovieContext _context;
-
-    public MovieController(MovieContext context)
+    private readonly IMovieRepository _movieRepository; 
+    private readonly IMapper _mapper;
+    
+    public MovieController(IMovieRepository movieRepository, IMapper mapper)
     {
-        _context = context;
+        _movieRepository = movieRepository;
+        _mapper = mapper;
     }
 
     [HttpGet]
     public IActionResult Get()
     {
-        var movies = _context.Movies.ToList();
+        var movies = _movieRepository.ObterLista();
         return Ok(movies);
     }
 
@@ -26,7 +31,7 @@ public class MovieController : ControllerBase
     [Route("{id}")]
     public IActionResult Get(int id)
     {
-        var movie = _context.Movies.FirstOrDefault(x => x.Id.Equals(id));
+        var movie = _movieRepository.ObterPorId(id);
 
         if (movie == null)
             return NotFound();
@@ -35,50 +40,34 @@ public class MovieController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] FilmeCriacaoDto movieDto)
+    public IActionResult Create([FromBody] FilmeCriacaoDto dto)
     {
-        var movie = new Movie();
+        if (ModelState.IsValid == false)
+        {
+            return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+        }
 
-        if (string.IsNullOrEmpty(movieDto.Titulo))
-            return BadRequest("Título inválido");
-        else
-            movie.Titulo = movieDto.Titulo;
-       
-        if (string.IsNullOrEmpty(movieDto.Genero))
-           return BadRequest("Gênero inválido");
-        else
-            movie.Genero = movieDto.Genero;
+        var movie = _mapper.Map<Movie>(dto);
 
-        movie.DataDeLancamento = movieDto.DataDeLancamento;
+        _movieRepository.Adicionar(movie);
 
-        _context.Movies.Add(movie);
-        _context.SaveChanges();
-
-        var movieDtoSaida = new FilmeCriacaoSaidaDto();
-
-        movieDtoSaida.Id = movie.Id;
-        movieDtoSaida.Titulo = movieDto.Titulo;
-        movieDtoSaida.Genero = movieDto.Genero;
-        movieDtoSaida.DataDeLancamento = movieDto.DataDeLancamento;
+        var movieDtoSaida = _mapper.Map<FilmeCriacaoSaidaDto>(movie);
 
         return CreatedAtAction(nameof(MovieController.Get), new { id = movie.Id }, movieDtoSaida);
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Delete(int id, [FromBody] FilmeAlteracaoDto movieDto)
+    public IActionResult Update(int id, [FromBody] FilmeAlteracaoDto movieDto)
     {
-        var movie = _context.Movies.FirstOrDefault(x => x.Id.Equals(id));
+        var movie = _movieRepository.ObterPorId(id);
 
         if (movie == null)
             return NotFound();
 
         movie.Titulo = movieDto.Titulo;
         movie.Genero = movieDto.Genero;
-
-        _context.Movies.Update(movie);
-        _context.SaveChanges();
-
+        
         return CreatedAtAction(nameof(MovieController.Get), new { id = movie.Id }, movie);
     }
 
@@ -91,6 +80,12 @@ public class FilmeCriacaoDto
     public string Titulo { get; set; }
     public string Genero { get; set; }
     public DateTime DataDeLancamento { get; set; }
+    public DiretorDto Diretor { get; set; }
+}
+
+public class DiretorDto {
+    public string Cpf { get; set; }
+
 }
 
 public class FilmeCriacaoSaidaDto

@@ -20,7 +20,6 @@
           "net6.0"
         ],
         "sources": {
-          "http://artifactory.softplan.com.br/artifactory/api/nuget/v3/nuget-local": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,9 +38,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "FluentValidation": {
+            "AutoMapper": {
               "target": "Package",
-              "version": "[11.5.1, )"
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
